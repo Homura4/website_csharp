@@ -37,7 +37,7 @@ namespace website
                         "~/Content/Module/build/js/custom.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/custom").Include(
-                        "~/Content/Module/build/css/custom.min.css"));
+                        "~/Content/Module/build/css/custom.css"));
 
             #endregion 母版页
 

@@ -155,7 +155,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\Login\Login.css" />
     <Content Include="Content\Image\homescreen.jpeg" />
     <Content Include="Content\Image\user.png" />
     <Content Include="Content\Image\img.jpg" />
@@ -479,6 +478,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\css\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -3401,6 +3401,18 @@ ul.project_files li a i {
 .login {
     background: #F7F7F7
 }
+.login-div-bg {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    width: 370px;
+    height: 501px;
+    padding-left: 10px;
+}
+
+.login-bg-img {
+    background-image: url(../../../Image/阿特拉斯抗着地球.jpg);
+    background-size: cover;
+}
 .login .fa-paw {
     font-size: 26px
 }
@@ -3483,8 +3495,12 @@ form:after {
     padding: 25px 0 0;
     position: relative;
     text-align: center;
-    text-shadow: 0 1px 0 #fff;
-    min-width: 280px
+    /*text-shadow: 0 1px 0 #fff;阴影*/
+    min-width: 280px; 
+    color:#ccc;
+}
+.login_content a{
+    color: #ccc;
 }
 .login_content a,
 .login_content .btn-default:hover {

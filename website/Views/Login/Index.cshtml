@@ -25,23 +25,21 @@
 
     <!-- Custom Theme Style -->
     @Styles.Render("~/Content/custom")
-    <!-- login css -->
-    <link href="~/Content/css/Login/Login.css" rel="stylesheet">
 </head>
 
-<body class="login bg-img">
+<body class="login login-bg-img">
     <div class="">
         <a class="hiddenanchor" id="signup"></a>
         <a class="hiddenanchor" id="signin"></a>
 
-        <div class="login_wrapper ">
+        <div class="login_wrapper">
 
-            <div class="div-bg">
+            <div class="login-div-bg">
                 <!-- 登陆 -->
                 <div class="animate form login_form ">
                     <section class="login_content">
                         <form>
-                            <h1>Login Form</h1>
+                            <h1>登陆</h1>
                             <div>
                                 <input type="text" class="form-control" placeholder="Username" required="" />
                             </div>
@@ -49,24 +47,24 @@
                                 <input type="password" class="form-control" placeholder="Password" required="" />
                             </div>
                             <div>
-                                <a class="btn btn-default submit" href="index.html">Log in</a>
-                                <a class="reset_pass" href="#">Lost your password?</a>
+                                <a class="btn btn-default submit" href="../Home/Index">登陆</a>
+                                <a class="reset_pass" href="#">忘记密码？</a>
                             </div>
 
                             <div class="clearfix"></div>
 
                             <div class="separator">
                                 <p class="change_link">
-                                    New to site?
-                                    <a href="#signup" class="to_register"> Create Account </a>
+                                    没有账号？
+                                    <a href="#signup" class="to_register"> 注册 </a>
                                 </p>
 
                                 <div class="clearfix"></div>
                                 <br />
 
                                 <div>
-                                    <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                                    <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                                    <h1><i class="fa fa-paw"></i> 网站说明 </h1>
+                                    <p>写一段网站说明或者功能介绍，这样看起来更高大上。</p>
                                 </div>
                             </div>
                         </form>
@@ -77,34 +75,34 @@
                 <div id="register" class="animate form registration_form">
                     <section class="login_content">
                         <form>
-                            <h1>Create Account</h1>
+                            <h1>注册</h1>
                             <div>
-                                <input type="text" class="form-control" placeholder="Username" required="" />
+                                <input type="text" class="form-control" placeholder="用吗名" required="" />
                             </div>
                             <div>
-                                <input type="email" class="form-control" placeholder="Email" required="" />
+                                <input type="email" class="form-control" placeholder="邮箱" required="" />
                             </div>
                             <div>
-                                <input type="password" class="form-control" placeholder="Password" required="" />
+                                <input type="password" class="form-control" placeholder="密码" required="" />
                             </div>
                             <div>
-                                <a class="btn btn-default submit" href="index.html">Submit</a>
+                                <a class="btn btn-default submit" href="../Home/Index">提交</a>
                             </div>
 
                             <div class="clearfix"></div>
 
                             <div class="separator">
                                 <p class="change_link">
-                                    Already a member ?
-                                    <a href="#signin" class="to_register"> Log in </a>
+                                    已有账户 ?
+                                    <a href="#signin" class="to_register"> 登陆 </a>
                                 </p>
 
                                 <div class="clearfix"></div>
                                 <br />
 
                                 <div>
-                                    <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                                    <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                                    <h1><i class="fa fa-paw"></i>说明可以不同</h1>
+                                    <p>不管同不同有点字总是好的，比如写个茴香豆的四种写法。</p>
                                 </div>
                             </div>
                         </form>
