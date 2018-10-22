@@ -1,4 +1,13 @@
-﻿.bg-img {
-    background-image: url(../../Image/阿特拉斯抗着地球.jpg);
-    background-size: cover;
+﻿.div-bg {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    width: 370px;
+    height: 501px;
+    padding-left: 10px;
 }
+
+.bg-img {
+    background-image: url(../../Image/阿特拉斯抗着地球.jpg);
+    background-size: contain;
+}
+
