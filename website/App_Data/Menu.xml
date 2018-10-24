@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu >
+  <MenuItem ID ="1" Text="标签分类" CSSClass="">
+    <MenuItem ID="1.1" Text="Home" Controller="" Action="" CSSClass="fa-sitemap">
+      <MenuItem ID="1.1.1" Text="初始展示" Controller="Home" Action="Index"  ChildAction="Data" CSSClass="fa-windows"></MenuItem>
+    </MenuItem>
+    <MenuItem ID="1.2" Text="菜单分类名称" Controller="" Action="" CSSClass="fa-windows">
+      <MenuItem ID="1.2.1" Text="一级菜单_1" Controller="Home" Action="Index"  ChildAction="Data" CSSClass=""></MenuItem>
+      <MenuItem ID="1.2.2" Text="一级菜单_2" Controller="Home" Action="Index"  ChildAction="Data" CSSClass=""></MenuItem>
+    </MenuItem>
+  </MenuItem>
+</Menu>
+<!--<MenuItem ID="1.1" Text="菜单名称" Controller="控制器名称(没有就为空)" Action="操作方法(没有就为空)"  ChildAction="子方法" CSSClass="菜单样式"></MenuItem>-->

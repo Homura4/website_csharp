@@ -11,20 +11,20 @@ namespace website
             #region 母版页
             // js
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Content/Module/jquery/dist/jquery.min.js"));
+                        "~/scripts/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                        "~/Content/Module/bootstrap/dist/js/bootstrap.min.js"));
+                        "~/scripts/bootstrap.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
-                        "~/Content/Module/fastclick/lib/fastclick.js"));
+                        "~/scripts/fastclick.js"));
 
             bundles.Add(new StyleBundle("~/bundles/nprogress").Include(
-                        "~/Content/Module/nprogress/nprogress.js"));
+                        "~/scripts/nprogress.js"));
 
             // css
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
-                        "~/Content/Module/bootstrap/dist/css/bootstrap.css"));
+                        "~/Content/Module/bootstrap/css/bootstrap.css"));
 
             bundles.Add(new StyleBundle("~/Content/font-awesome").Include(
                         "~/Content/Module/font-awesome/css/font-awesome.min.css"));
@@ -34,7 +34,7 @@ namespace website
 
             //自定义公共css与js
             bundles.Add(new StyleBundle("~/bundles/custom").Include(
-                        "~/Content/Module/build/js/custom.min.js"));
+                        "~/scripts/custom.js"));
 
             bundles.Add(new StyleBundle("~/Content/custom").Include(
                         "~/Content/Module/build/css/custom.css"));
@@ -43,6 +43,7 @@ namespace website
 
             #region 模块
 
+            // css
             bundles.Add(new StyleBundle("~/Content/animate").Include(
                         "~/Content/Module/animate.css/animate.min.css"));
 
