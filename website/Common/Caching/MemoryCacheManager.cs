@@ -8,7 +8,7 @@ using System.Web;
 namespace website
 {
     /// <summary>
-    /// 缓存管理器
+    /// 缓存操作类
     /// </summary>
     public class MemoryCacheManager
     {

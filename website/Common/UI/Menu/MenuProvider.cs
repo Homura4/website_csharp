@@ -109,7 +109,6 @@ namespace website
                 {
                     item.CSSClass = p.Attribute("CSSClass")?.Value.Trim();
                 }
-                // 添加小于,意义不明
                 item.Parent = parent;
                 listMenuItem.Add(item);
                 if (!menusDic.ContainsKey(item.ID))
@@ -119,6 +118,20 @@ namespace website
             }
 
             return listMenuItem;
+        }
+
+        /// <summary>
+        /// 获取菜单列表
+        /// </summary>
+        /// <returns></returns>
+        public static Dictionary<String, MenuItem> GetMenuDic()
+        {
+            if (menusDic.Count == 0)
+            {
+                GetMenu();
+            }
+
+            return menusDic;
         }
 
         #endregion

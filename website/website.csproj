@@ -148,7 +148,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\Authentication\FormsAuthenticationService.cs" />
+    <Compile Include="Common\Authentication\ValidateCode.cs" />
+    <Compile Include="Common\AuthorizeAttribute\CustomAuthorizeAttribute.cs" />
     <Compile Include="Common\Caching\MemoryCacheManager.cs" />
+    <Compile Include="Common\Tools\Rand.cs" />
     <Compile Include="Common\UI\Menu\Menu.cs" />
     <Compile Include="Common\UI\Menu\MenuItem.cs" />
     <Compile Include="Common\UI\Menu\MenuProvider.cs" />
@@ -157,6 +161,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -260,7 +265,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\css\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

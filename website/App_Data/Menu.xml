@@ -4,9 +4,12 @@
     <MenuItem ID="1.1" Text="Home" Controller="" Action="" CSSClass="fa-sitemap">
       <MenuItem ID="1.1.1" Text="初始展示" Controller="Home" Action="Index"  ChildAction="Data" CSSClass="fa-windows"></MenuItem>
     </MenuItem>
-    <MenuItem ID="1.2" Text="菜单分类名称" Controller="" Action="" CSSClass="fa-windows">
-      <MenuItem ID="1.2.1" Text="一级菜单_1" Controller="Home" Action="Index"  ChildAction="Data" CSSClass=""></MenuItem>
-      <MenuItem ID="1.2.2" Text="一级菜单_2" Controller="Home" Action="Index"  ChildAction="Data" CSSClass=""></MenuItem>
+    <MenuItem ID="1.2" Text="菜单名称" Controller="" Action="" CSSClass="fa-windows">
+      <MenuItem ID="1.2.1" Text="一级菜单_1" Controller="" Action=""  ChildAction="Data" CSSClass="">
+        <MenuItem ID="1.2.1.1" Text="二级菜单_1" Controller="" Action=""  ChildAction="Data" CSSClass=""></MenuItem>
+        <MenuItem ID="1.2.1.1" Text="二级菜单_2" Controller="" Action=""  ChildAction="Data" CSSClass=""></MenuItem>
+      </MenuItem>
+      <MenuItem ID="1.2.2" Text="一级菜单_2" Controller="" Action=""  ChildAction="Data" CSSClass=""></MenuItem>
     </MenuItem>
   </MenuItem>
 </Menu>

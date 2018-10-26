@@ -46,6 +46,10 @@ namespace website
         [JsonProperty(PropertyName = "values")]
         public IEnumerable<MenuItem> Items { get; set; }
 
+        /// <summary>
+        /// 当前菜单
+        /// </summary>
+        /// <value>The parent.</value>
         [JsonIgnore]
         public MenuItem Parent { get; set; }
 
