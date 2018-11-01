@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL.DataBLL;
+using Common;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +15,8 @@ namespace website.Controllers
 {
     public class LoginController : Controller
     {
+        #region 页面访问方法
+
         /// <summary>
         /// 登录页面返回视图
         /// </summary>
@@ -104,10 +109,8 @@ namespace website.Controllers
             UpdateLoginInfo(loginUserByDB, loginIp);
             FormsAuthenticationService.SignIn(loginUser);
 
-            result = true;
-
             //日志记录
-            GameManageBaseBLL.Insert(new UserOperationLog
+            DataAccessBll.Insert(new UserOperationLog
             {
                 UserID = loginUser.UserID,
                 UserName = loginUser.UserName,
@@ -118,30 +121,84 @@ namespace website.Controllers
                 Crdate = DateTime.Now
             });
 
-
-
             Session["vcode"] = String.Empty;
 
-
-
-            // 如果登录成功
-            if (result)
+            // 登陆成功 判断之前是否访问某个页面 没有就跳转到home
+            if (String.IsNullOrEmpty(model.ReturnUrl) || model.ReturnUrl.Trim() == "/")
             {
-                if (String.IsNullOrEmpty(model.ReturnUrl) || model.ReturnUrl.Trim() == "/")
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    return Redirect(model.ReturnUrl);
-                }
+                return RedirectToAction("Index", "Home");
             }
             else
             {
-                model.Message = message;
-                model.UserPwd = String.Empty;
-                return View("Login", model);
+                return Redirect(model.ReturnUrl);
             }
         }
+
+        #endregion
+
+        #region 私有方法
+
+        /// <summary>
+        /// 获取用户
+        /// </summary>
+        /// <param name="userName">用户名</param>
+        /// <param name="pwd">密码</param>
+        /// <returns></returns>
+        private static User GetUser(String userName, String pwd)
+        {
+            // 获取用户
+            String userPwd = EncryptionMD5.MD5Encrypt32(pwd, EncryptionMD5.LetterCase.UpperCase);
+            var user = DataAccessBll.GetDefinedList(new User
+            {
+                UserName = userName,
+                UserPwd = userPwd
+            });
+
+            return user.FirstOrDefault();
+        }
+
+        /// <summary>
+        /// 模型转化
+        /// </summary>
+        private UserViewModel ModelConvert(User model)
+        {
+            if (model == null)
+            {
+                return null;
+            }
+
+            var role = DataAccessBll.GetList(new Role { ID = model.UserRole }).FirstOrDefault();
+
+            return new UserViewModel()
+            {
+                UserID = model.UserID,
+                Status = model.Status,
+                UserName = model.UserName,
+                UserPwd = model.UserPwd,
+                IfSuper = model.IfSuper,
+                UserRole = model.UserRole,
+                LastLoginIP = model.LastLoginIP,
+                LastLoginTime = model.LastLoginTime,
+                Crdate = model.LastLoginTime,
+
+                UserRoleName = role == null ? "角色不存在" : role.RolesName,
+                MenuId = role == null ? "" : role.Page,
+            };
+        }
+
+        /// <summary>
+        /// 更新登录信息
+        /// </summary>
+        /// <param name="user">玩家</param>
+        /// <param name="loginIp">登录ip</param>
+        private static void UpdateLoginInfo(User user, String loginIp)
+        {
+            user.LastLoginIP = loginIp;
+            user.LastLoginTime = DateTime.Now;
+
+            DataAccessBll.Update(user);
+        }
+
+        #endregion
     }
 }

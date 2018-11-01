@@ -152,7 +152,6 @@
     <Compile Include="Common\Authentication\ValidateCode.cs" />
     <Compile Include="Common\AuthorizeAttribute\CustomAuthorizeAttribute.cs" />
     <Compile Include="Common\Caching\MemoryCacheManager.cs" />
-    <Compile Include="Common\Tools\Rand.cs" />
     <Compile Include="Common\UI\Menu\Menu.cs" />
     <Compile Include="Common\UI\Menu\MenuItem.cs" />
     <Compile Include="Common\UI\Menu\MenuProvider.cs" />
@@ -264,6 +263,7 @@
     <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Common\Tools\" />
     <Folder Include="Content\css\" />
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +273,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{262E53A8-72E9-4971-924F-A64454964FD2}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{17A1993A-F232-4767-8DEA-A9F38E8127E2}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{88F00F6E-2812-4F6F-8CE6-E1770A088FCF}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
