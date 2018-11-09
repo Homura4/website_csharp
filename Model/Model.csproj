@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\NoThing.cs" />
+    <Compile Include="Common\ReturnObject.cs" />
     <Compile Include="WebsiteModel\Role.cs" />
     <Compile Include="WebsiteModel\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

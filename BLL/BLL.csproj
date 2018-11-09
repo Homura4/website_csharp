@@ -40,16 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBLL\DataAccessBll.cs" />
+    <Compile Include="Common\CommunicateBLL.cs" />
+    <Compile Include="Common\DataCenterBLL.cs" />
+    <Compile Include="DataBLL\DataAccessBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{17A1993A-F232-4767-8DEA-A9F38E8127E2}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{0F62624C-95E1-436A-85ED-24D54586B29F}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{88F00F6E-2812-4F6F-8CE6-E1770A088FCF}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

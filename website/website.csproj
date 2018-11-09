@@ -46,7 +46,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Caching" />
@@ -100,9 +104,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -151,6 +152,7 @@
     <Compile Include="Common\Authentication\FormsAuthenticationService.cs" />
     <Compile Include="Common\Authentication\ValidateCode.cs" />
     <Compile Include="Common\AuthorizeAttribute\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Common\AuthorizeAttribute\OperationLogAttribute.cs" />
     <Compile Include="Common\Caching\MemoryCacheManager.cs" />
     <Compile Include="Common\UI\Menu\Menu.cs" />
     <Compile Include="Common\UI\Menu\MenuItem.cs" />
@@ -282,6 +284,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{17A1993A-F232-4767-8DEA-A9F38E8127E2}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{0F62624C-95E1-436A-85ED-24D54586B29F}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{88F00F6E-2812-4F6F-8CE6-E1770A088FCF}</Project>

@@ -24,7 +24,7 @@ namespace BLL.DataBLL
     /// <summary>
     /// 数据访问
     /// </summary>
-    public class DataAccessBll
+    public class DataAccessBLL
     {
         /// <summary>
         /// 查询列表（只支持主键筛选）

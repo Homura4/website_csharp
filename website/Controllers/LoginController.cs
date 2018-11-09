@@ -110,7 +110,7 @@ namespace website.Controllers
             FormsAuthenticationService.SignIn(loginUser);
 
             //日志记录
-            DataAccessBll.Insert(new UserOperationLog
+            DataAccessBLL.Insert(new UserOperationLog
             {
                 UserID = loginUser.UserID,
                 UserName = loginUser.UserName,
@@ -134,6 +134,19 @@ namespace website.Controllers
             }
         }
 
+        /// <summary>
+        /// 退出
+        /// </summary>
+        /// <returns></returns>
+        [OperationLog("登出", "")]
+        public ActionResult LoginOut()
+        {
+            //登出
+            FormsAuthenticationService.SignOut();
+            Session.Clear();
+            return View("Login", new UserViewModel());
+        }
+
         #endregion
 
         #region 私有方法
@@ -148,7 +161,7 @@ namespace website.Controllers
         {
             // 获取用户
             String userPwd = EncryptionMD5.MD5Encrypt32(pwd, EncryptionMD5.LetterCase.UpperCase);
-            var user = DataAccessBll.GetDefinedList(new User
+            var user = DataAccessBLL.GetDefinedList(new User
             {
                 UserName = userName,
                 UserPwd = userPwd
@@ -167,7 +180,7 @@ namespace website.Controllers
                 return null;
             }
 
-            var role = DataAccessBll.GetList(new Role { ID = model.UserRole }).FirstOrDefault();
+            var role = DataAccessBLL.GetList(new Role { ID = model.UserRole }).FirstOrDefault();
 
             return new UserViewModel()
             {
@@ -196,7 +209,7 @@ namespace website.Controllers
             user.LastLoginIP = loginIp;
             user.LastLoginTime = DateTime.Now;
 
-            DataAccessBll.Update(user);
+            DataAccessBLL.Update(user);
         }
 
         #endregion
