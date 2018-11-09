@@ -1,6 +1,7 @@
-.vs
+/.vs
 bin
 Bin
-
+[Bb]in/*
 obj
 Obj
+[Oo]bj/*
