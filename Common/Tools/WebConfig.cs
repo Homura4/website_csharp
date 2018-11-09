@@ -59,7 +59,7 @@ namespace Common
                     throw new Exception("GameManageConnString数据库连接没有配置");
                 }
 
-                return ConfigurationManager.ConnectionStrings["GameManageConnString"].ConnectionString;
+                return ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
             }
         }
 
