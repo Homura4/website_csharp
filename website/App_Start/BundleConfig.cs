@@ -11,16 +11,16 @@ namespace website
             #region 母版页
             // js
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/scripts/jquery.min.js"));
+                        "~/Scripts/module/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                        "~/scripts/bootstrap.min.js"));
+                        "~/Scripts/module/bootstrap.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
-                        "~/scripts/fastclick.js"));
+            bundles.Add(new ScriptBundle("~/bundles/fastclick").Include(
+                        "~/Scripts/module/fastclick.js"));
 
             bundles.Add(new StyleBundle("~/bundles/nprogress").Include(
-                        "~/scripts/nprogress.js"));
+                        "~/Scripts/module/nprogress.js"));
 
             // css
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
@@ -34,10 +34,10 @@ namespace website
 
             //自定义公共css与js
             bundles.Add(new StyleBundle("~/bundles/custom").Include(
-                        "~/scripts/custom.js"));
+                        "~/Scripts/build/custom.js"));
 
             bundles.Add(new StyleBundle("~/Content/custom").Include(
-                        "~/Content/Module/build/css/custom.css"));
+                        "~/Content/build/css/custom.css"));
 
             #endregion 母版页
 

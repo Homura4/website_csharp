@@ -55,7 +55,7 @@ namespace website.Common
                 var menusList = new List<MenuItem>();
 
                 //登录用户都可以访问该页面 
-                if (controller == "Home" && action == "Index")
+                if (controller == "Login" && action == "Index")
                 {
                     return;
                 }
@@ -101,7 +101,7 @@ namespace website.Common
             // 获取当前访问的连接
             String returnUrl = filterContext.HttpContext.Request.RawUrl;
             // 跳转登录
-            String redirectUrl = $"~/Home/Login?ReturnUrl={returnUrl}";
+            String redirectUrl = $"~/Login/Index?ReturnUrl={returnUrl}";
             filterContext.Result = new RedirectResult(redirectUrl, true);
         }
 

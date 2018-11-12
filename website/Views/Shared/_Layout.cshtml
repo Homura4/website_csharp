@@ -10,10 +10,12 @@
 
     <!-- Bootstrap -->
     @Styles.Render("~/Content/bootstrap")
-    <!-- Font Awesome -->
+    <!-- Font Awesome : 图标字体库 -->
     @Styles.Render("~/Content/font-awesome")
-    <!-- NProgress -->
+    <!-- NProgress : 顶部加载进度条 -->
     @Styles.Render("~/Content/nprogress")
+    <!-- 子页css -->
+    @RenderSection("css", required: false)
 
     <!-- Custom -->
     @Styles.Render("~/Content/custom")
@@ -69,7 +71,6 @@
                 </div>
             </div>
             <!-- /left menu -->
-
             <!-- top navigation -->
             <div class="top_nav">
                 <div class="nav_menu">
@@ -166,15 +167,13 @@
                 </div>
             </div>
             <!-- /top navigation -->
-
             <!-- page content -->
             <div class="right_col" role="main">
-                <div class="">
-                    @RenderBody()
-                </div>
+
+                @RenderBody()
+
             </div>
             <!-- /page content -->
-
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
@@ -191,13 +190,14 @@
     @Scripts.Render("~/bundles/jquery")
     <!-- Bootstrap -->
     @Scripts.Render("~/bundles/bootstrap")
-
-    @Scripts.Render("~/bundles/scripts")
-
+    <!-- FastClick : 移动端在点击后会有300毫秒的延迟,而这个可以是点击立即生效(需要注意有些情况是不必要的) -->
+    @Scripts.Render("~/bundles/fastclick")
+    <!-- NProgress : 顶部加载进度条 -->
     @Scripts.Render("~/bundles/nprogress")
-
-    @Scripts.Render("~/bundles/custom")
-
+    <!-- 子页js -->
     @RenderSection("scripts", required: false)
+
+    <!-- 自定义 -->
+    @Scripts.Render("~/bundles/custom")
 </body>
 </html>

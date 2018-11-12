@@ -3,15 +3,15 @@
   <!-- 基本的功能集合 -->
   <MenuItem ID ="1" Text="常用控件与页面" CSSClass="">
     <!-- 用描述来隔开不然看着头疼 -->
-    <MenuItem ID="1.1" Text="Home" Controller="" Action="" CSSClass="fa-home">
+    <MenuItem ID="1.1" Text="仪表盘集合" Controller="" Action="" CSSClass="fa-home">
       <MenuItem ID="1.1.1" Text="初始展示页" Controller="Home" Action="Index"  ChildAction="Data"></MenuItem>
-      <MenuItem ID="1.1.2" Text="仪表盘1" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.1.3" Text="仪表盘2" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.1.3" Text="仪表盘3" Controller="" Action=""  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.1.2" Text="仪表盘1" Controller="Dashboard" Action="Dashboard1"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.1.3" Text="仪表盘2" Controller="Dashboard" Action="Dashboard2"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.1.3" Text="仪表盘3" Controller="Dashboard" Action="Dashboard3"  ChildAction="Data" ></MenuItem>
     </MenuItem>
     <!-- 控件的库 -->
     <MenuItem ID="1.2" Text="控件集合" Controller="" Action="" CSSClass="fa-edit">
-      <MenuItem ID="1.2.1" Text="一般表格" Controller="" Action=""  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.2.1" Text="一般表格" Controller="Form" Action="GeneralForm"  ChildAction="Data" ></MenuItem>
       <MenuItem ID="1.2.2" Text="高级组件" Controller="" Action=""  ChildAction="Data" ></MenuItem>
       <MenuItem ID="1.2.3" Text="表格验证" Controller="" Action=""  ChildAction="Data" ></MenuItem>
       <MenuItem ID="1.2.4" Text="表单向导" Controller="" Action=""  ChildAction="Data" ></MenuItem>
