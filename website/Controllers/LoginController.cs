@@ -33,7 +33,7 @@ namespace website.Controllers
         /// <param name="returnUrl">登录后跳转页面</param>
         /// <returns>ActionResult.</returns>
         [HttpGet]
-        public ActionResult Login(String returnUrl = null)
+        public ActionResult Index(String returnUrl = null)
         {
             // 清除登录信息
             FormsAuthenticationService.SignOut();
