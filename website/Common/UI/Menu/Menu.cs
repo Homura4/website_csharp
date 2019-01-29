@@ -14,12 +14,16 @@ namespace website
         /// <summary>
         /// 创建菜单
         /// </summary>
-        /// <returns></returns>
+        /// <param name="html">扩展htmlhelper方法</param>
+        /// <param name="menuItems">当前获取到的用户菜单集合</param>
+        /// <param name="menuUrl">actionName,controllerName,URL</param>
+        /// <param name="collapseAll">是否收缩菜单(未实现,没有展开需求,预留字段,思路为动态判断然后写入class)</param>
+        /// <returns>MvcHtmlString.</returns>
         public static MvcHtmlString CreateMenu(this HtmlHelper html, IEnumerable<MenuItem> menuItems, Func<String, String, String> menuUrl, Boolean collapseAll = false)
         {
             string menuHtml = string.Empty;
 
-            menuHtml = RecursionMenuList(html, menuItems, menuUrl, collapseAll, out _);
+            menuHtml = RecursionMenuList(html, menuItems, menuUrl, collapseAll);
 
             return MvcHtmlString.Create(menuHtml);
         }
@@ -27,9 +31,8 @@ namespace website
         /// <summary>
         /// 菜单生成
         /// </summary>
-        public static string RecursionMenuList(HtmlHelper html, IEnumerable<MenuItem> menuItems, Func<String, String, String> menuUrl, Boolean collapseAll, out Boolean isCollapse)
+        public static string RecursionMenuList(HtmlHelper html, IEnumerable<MenuItem> menuItems, Func<String, String, String> menuUrl, Boolean collapseAll)
         {
-            isCollapse = false;
             string menuHtml = string.Empty;
 
             // 菜单分组

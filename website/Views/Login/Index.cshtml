@@ -1,4 +1,4 @@
-﻿
+﻿@model website.Models.UserViewModel
 @{
     Layout = null;
 }
@@ -23,8 +23,23 @@
     <!-- Animate.css -->
     @Styles.Render("~/Content/animate")
 
+    <!-- VCode : 图片验证码 -->
+    <link href="~/Content/build/css/VCode/VCode.css" rel="stylesheet">
+
     <!-- Custom Theme Style -->
     @Styles.Render("~/Content/custom")
+
+    <script>
+        //$(function () {
+        //    $("#butModal").trigger("click");
+        //});
+        //window.onload = function () {
+        //    $("#butModal").trigger("click");
+        //};
+        
+
+    </script>
+
 </head>
 
 <body class="login login-bg-img">
@@ -33,27 +48,34 @@
         <a class="hiddenanchor" id="signin"></a>
 
         <div class="login_wrapper">
-            <!-- 一个登录美化思路:登录半透明框用白色50%,圆角,背景用深色,输入框修改焦点提示 -->
+
+            <!-- 一个登陆美化思路:登录半透明框用白色50%,圆角,背景用深色,输入框修改焦点提示 -->
+            <!-- 一个自动变化的思路: 背景放在".longin_form"之中,设置偏转为负数 -->
             <div class="login-div-bg">
                 <!-- 登陆 -->
                 <div class="animate form login_form ">
                     <section class="login_content">
-                        <form>
+                        <form action="/Login/Index" method="post" data-parsley-validate>
                             <h1>登陆</h1>
                             <div>
-                                <input type="text" class="form-control" placeholder="Username" required="" />
+                                <input type="text" class="form-control" placeholder="Username" required="" name="UserAccount" />
                             </div>
                             <div>
-                                <input type="password" class="form-control" placeholder="Password" required="" />
+                                <input type="password" class="form-control" placeholder="Password" required="" name="UserPwd" />
                             </div>
+                            @*<div>
+                                <input type="text" class="form-control" required="" name="vcode" />
+                            </div>*@
                             <div>
-                                <a class="btn btn-default submit" href="../Home/Index">登陆</a>
+                                <button class="btn btn-default submit" id="but" >登陆</button>
                                 <a class="reset_pass" href="#">忘记密码？</a>
                             </div>
 
                             <div class="clearfix"></div>
 
                             <div class="separator">
+
+
                                 <p class="change_link">
                                     没有账号？
                                     <a href="#signup" class="to_register"> 注册 </a>
@@ -74,7 +96,7 @@
                 <!-- 注册 -->
                 <div id="register" class="animate form registration_form">
                     <section class="login_content">
-                        <form>
+                        <form data-parsley-validate>
                             <h1>注册</h1>
                             <div>
                                 <input type="text" class="form-control" placeholder="用吗名" required="" />
@@ -86,7 +108,7 @@
                                 <input type="password" class="form-control" placeholder="密码" required="" />
                             </div>
                             <div>
-                                <a class="btn btn-default submit" href="../Home/Index">提交</a>
+                                <button class="btn btn-default submit" type="submit" id="subbut">提交</button>
                             </div>
 
                             <div class="clearfix"></div>
@@ -108,10 +130,65 @@
                         </form>
                     </section>
                 </div>
-
-
+                <div class="clearfix"></div>
             </div>
+
         </div>
     </div>
+
+    @*<button id="butModal" data-toggle="modal" data-target="#VCodeModal" >插件测试</button>*@
+    <button id="butModal" >插件测试</button>
+    <div id="VCode"></div>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="VCode1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width:330px;">
+            <div class="modal-content">
+                <div class="vCode_model">
+                    <div class="vCode_img_bg">
+                        <img src="~/Content/Image/codeimage/1.png" class="vCode_img" />
+                        <div class="vCode_push_bg">
+                            <i class="vCode_push vCode_push_img">刷新</i>
+                            <span class="vCode_push_span">验证码过期,请刷新</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="vCode_select_bg">
+                            <div class="vCode_select_but"></div>
+                            <span class="vCode_select_span">按住滑块,拖动完成拼图</span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- jQuery -->
+    @Scripts.Render("~/bundles/jquery")
+    <!-- Bootstrap -->
+    @Scripts.Render("~/bundles/bootstrap")
+    <!-- Parsley : 表单验证插件 -->
+    <script src="~/Scripts/module/parsley.js"></script>
+    <!-- VCode : 图片验证码 -->
+    <script src="~/Scripts/build/VCode.js"></script>
+
+    <script type="text/javascript">
+        $('#VCode').VCode({
+
+        });
+        // 打开模态框
+        $("#butModal").click(function () {
+            $('#VCodeModal').modal('show');
+        });
+
+        // 验证思路:
+        // 1.考虑到多个插件框架的兼容,把验证插件干掉自己手写以适应框架
+        // 2.验证分为两种,本地验证空和长度,远程验证合法性
+        // 3.本地在提交前验证,远程在提交之后返回
+        // 4.以<a>标签来验证,以<but>来提交
+    </script>
+
+    <!-- 自定义 -->
+    @Scripts.Render("~/bundles/custom")
 </body>
 </html>
+

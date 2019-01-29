@@ -55,10 +55,21 @@ namespace website.Controllers
         }
 
         /// <summary>
+        /// 验证码背景
+        /// </summary>
+        [OutputCache(Location = OutputCacheLocation.None)]
+        public void VCodeImg()
+        {
+            var code = new ValidateCode();
+
+            code.getVCodeImgBG();
+        }
+
+        /// <summary>
         /// 登录
         /// </summary>
         [HttpPost]
-        public ActionResult Login(UserViewModel model, String vcode)
+        public ActionResult Index(UserViewModel model, String vcode)
         {
             String message = String.Empty;
             Boolean result = false;
@@ -68,7 +79,7 @@ namespace website.Controllers
                 message = "验证码过期";
                 model.Message = message;
                 model.UserPwd = String.Empty;
-                return View("Login", model);
+                return View("Index", model);
             }
 
             if (Session["vcode"].ToString() != vcode)
@@ -76,24 +87,24 @@ namespace website.Controllers
                 message = "验证码错误";
                 model.Message = message;
                 model.UserPwd = String.Empty;
-                return View("Login", model);
+                return View("Index", model);
             }
 
-            if (String.IsNullOrEmpty(model.UserName) || String.IsNullOrEmpty(model.UserPwd))
+            if (String.IsNullOrEmpty(model.UserAccount) || String.IsNullOrEmpty(model.UserPwd))
             {
                 message = "请输入账号、密码！";
                 model.Message = message;
                 model.UserPwd = String.Empty;
-                return View("Login", model);
+                return View("Index", model);
             }
 
-            var loginUserByDB = GetUser(model.UserName, model.UserPwd);
+            var loginUserByDB = GetUser(model.UserAccount, model.UserPwd);
             if (loginUserByDB == null)
             {
                 message = "请输入正确的账号、密码！";
                 model.Message = message;
                 model.UserPwd = String.Empty;
-                return View("Login", model);
+                return View("Index", model);
             }
 
             if (loginUserByDB.Status != 0)
@@ -101,7 +112,7 @@ namespace website.Controllers
                 message = "您的帐号已被锁定，请联系管理员！";
                 model.Message = message;
                 model.UserPwd = String.Empty;
-                return View("Login", model);
+                return View("Index", model);
             }
 
             var loginUser = ModelConvert(loginUserByDB);
@@ -113,8 +124,8 @@ namespace website.Controllers
             DataAccessBLL.Insert(new UserOperationLog
             {
                 UserID = loginUser.UserID,
-                UserName = loginUser.UserName,
-                OperationMothod = "Home.Login",
+                UserAccount = loginUser.UserAccount,
+                OperationMothod = "login.Index",
                 OperationName = "系统登录",
                 OperationData = "",
                 ReturnData = String.Empty,
@@ -157,13 +168,13 @@ namespace website.Controllers
         /// <param name="userName">用户名</param>
         /// <param name="pwd">密码</param>
         /// <returns></returns>
-        private static User GetUser(String userName, String pwd)
+        private static User GetUser(String userAccount, String pwd)
         {
             // 获取用户
             String userPwd = EncryptionMD5.MD5Encrypt32(pwd, EncryptionMD5.LetterCase.UpperCase);
             var user = DataAccessBLL.GetDefinedList(new User
             {
-                UserName = userName,
+                UserAccount = userAccount,
                 UserPwd = userPwd
             });
 
@@ -186,8 +197,9 @@ namespace website.Controllers
             {
                 UserID = model.UserID,
                 Status = model.Status,
-                UserName = model.UserName,
+                UserAccount = model.UserAccount,
                 UserPwd = model.UserPwd,
+                UserName = model.UserName,
                 IfSuper = model.IfSuper,
                 UserRole = model.UserRole,
                 LastLoginIP = model.LastLoginIP,

@@ -43,6 +43,18 @@ namespace DAL
 
         #endregion
 
+        #region 初始化
+
+        /// <summary>
+        /// 构造方法
+        /// </summary>
+        static SqlFactory()
+        {
+            InitType();
+        }
+
+        #endregion
+
         #region 私有方法
 
         /// <summary>

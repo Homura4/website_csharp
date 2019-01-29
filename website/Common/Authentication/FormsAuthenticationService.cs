@@ -21,7 +21,7 @@ namespace website.Common.Authentication
         {
             #region Session
 
-            HttpContext.Current.Session["LoginUserName"] = user.UserName;
+            HttpContext.Current.Session["LoginUserAccount"] = user.UserAccount;
             HttpContext.Current.Session["LoginUserId"] = user.UserID;
             HttpContext.Current.Session["LoginUserData"] = user.MenuId;
 
@@ -48,12 +48,12 @@ namespace website.Common.Authentication
             #region session
 
             var loginuserid = HttpContext.Current.Session["LoginUserId"];
-            var loginname = HttpContext.Current.Session["LoginUserName"];
+            var loginAccount = HttpContext.Current.Session["LoginUserAccount"];
             var loginuserdata = HttpContext.Current.Session["LoginUserData"];
 
-            if (loginname != null && loginuserid != null && loginuserdata != null)
+            if (loginAccount != null && loginuserid != null && loginuserdata != null)
             {
-                var user = new UserViewModel() { UserID = Convert.ToInt32(loginuserid), UserName = loginname.ToString(), MenuId = loginuserdata.ToString() };
+                var user = new UserViewModel() { UserID = Convert.ToInt32(loginuserid), UserAccount = loginAccount.ToString(), MenuId = loginuserdata.ToString() };
 
                 return user;
             }

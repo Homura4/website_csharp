@@ -22,6 +22,12 @@ namespace Model
         public Int32 UserID { get; set; }
 
         /// <summary>
+        /// 用户账号(注册时名字和账号相同)
+        /// </summary>
+        /// <value>The user account.</value>
+        public String UserAccount { get; set; }
+
+        /// <summary>
         /// 用户名称
         /// </summary>
         public String UserName { get; set; }

@@ -169,7 +169,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Menu.xml" />
+    <Content Include="Content\build\css\VCode\VCode.css" />
+    <Content Include="Content\Image\arrow.png" />
+    <Content Include="Content\Image\codeimage\1.png" />
+    <Content Include="Content\Image\codeimage\10.png" />
+    <Content Include="Content\Image\codeimage\11.png" />
+    <Content Include="Content\Image\codeimage\2.png" />
+    <Content Include="Content\Image\codeimage\3.png" />
+    <Content Include="Content\Image\codeimage\4.png" />
+    <Content Include="Content\Image\codeimage\5.png" />
+    <Content Include="Content\Image\codeimage\6.png" />
+    <Content Include="Content\Image\codeimage\7.png" />
+    <Content Include="Content\Image\codeimage\8.png" />
+    <Content Include="Content\Image\codeimage\9.png" />
     <Content Include="Content\Image\homescreen.jpeg" />
+    <Content Include="Content\Image\loginicon.png" />
+    <Content Include="Content\Image\refresh.png" />
     <Content Include="Content\Image\user.png" />
     <Content Include="Content\Image\img.jpg" />
     <Content Include="Content\Image\login_bg.jpg" />
@@ -257,6 +272,7 @@
     <Content Include="Content\Module\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Module\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Module\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\build\VCode.js" />
     <Content Include="Scripts\module\autosize.js" />
     <Content Include="Scripts\module\autosize.min.js" />
     <Content Include="Scripts\module\bootstrap-progressbar.js" />

@@ -21,12 +21,12 @@ namespace website.Models
         public Int32 UserID { get; set; }
 
         /// <summary>
-        /// 用户名称
+        /// 用户账号
         /// </summary>
-        [Display(Name = "登录名")]
-        [Required(ErrorMessage = "请填写登录名")]
-        [Remote("Exist", "User", ErrorMessage = "该登录名已存在")]
-        public String UserName { get; set; }
+        [Display(Name = "登录账号")]
+        [Required(ErrorMessage = "请填写账号")]
+        [Remote("Exist", "User", ErrorMessage = "该账号已存在")]
+        public String UserAccount { get; set; }
 
         /// <summary>
         /// 用户密码
@@ -34,6 +34,12 @@ namespace website.Models
         [Display(Name = "用户密码")]
         [Required(ErrorMessage = "请填写登录密码")]
         public String UserPwd { get; set; }
+
+        /// <summary>
+        /// 用户名称
+        /// </summary>
+        [Display(Name = "用户名称")]
+        public String UserName { get; set; }
 
         /// <summary>
         /// 添加时间

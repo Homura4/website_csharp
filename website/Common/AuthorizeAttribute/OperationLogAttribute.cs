@@ -82,7 +82,7 @@ namespace website
                 DataAccessBLL.Insert(new UserOperationLog
                 {
                     UserID = ticketUser?.UserID ?? 0,
-                    UserName = ticketUser == null ? "未知用户" : ticketUser.UserName,
+                    UserAccount = ticketUser == null ? "未知用户" : ticketUser.UserAccount,
                     OperationMothod = $"{controllerName}.{actionName}",
                     OperationName = operationExplain,
                     OperationData = JsonConvert.SerializeObject(parmsObj),

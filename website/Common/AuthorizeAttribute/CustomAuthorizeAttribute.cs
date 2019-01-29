@@ -7,6 +7,11 @@ using website.Common.Authentication;
 
 namespace website.Common
 {
+    /// <summary>
+    /// 身份验证
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.AuthorizeAttribute" />
+    /// <seealso cref="System.Web.Mvc.IExceptionFilter" />
     public class CustomAuthorizeAttribute : AuthorizeAttribute, IExceptionFilter
     {
         /// <summary>
@@ -47,7 +52,8 @@ namespace website.Common
             String action = filterContext.ActionDescriptor.ActionName;
             String controller = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
 
-            if (user.UserName.ToLower() != "admin")
+            // 需要获取管理员账号,思路为1.管理员账号和名字相同不允许修改2.初始化获取管理员账号然后来做对比
+            if (user.UserAccount.ToLower() != "admin")
             {
                 //所有菜单
                 var menusDic = MenuProvider.GetMenuDic();

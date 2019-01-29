@@ -48,7 +48,7 @@ namespace Common
         public enum DataBaseType
         {
             /// <summary>
-            /// 表明
+            /// 表名
             /// </summary>
             Table,
 

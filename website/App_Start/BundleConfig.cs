@@ -14,7 +14,7 @@ namespace website
                         "~/Scripts/module/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                        "~/Scripts/module/bootstrap.min.js"));
+                        "~/Scripts/module/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/fastclick").Include(
                         "~/Scripts/module/fastclick.js"));

@@ -27,9 +27,9 @@ namespace Model
         public Int32 UserID { get; set; }
 
         /// <summary>
-        /// 操作用户名称
+        /// 操作用户账号
         /// </summary>
-        public String UserName { get; set; }
+        public String UserAccount { get; set; }
 
         /// <summary>
         /// 操作说明
