@@ -348,6 +348,7 @@
     <Content Include="Views\Dashboard\Dashboard2.cshtml" />
     <Content Include="Views\Dashboard\Dashboard3.cshtml" />
     <Content Include="Views\Form\GeneralForm.cshtml" />
+    <Content Include="Views\Form\AdvancedComponents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
