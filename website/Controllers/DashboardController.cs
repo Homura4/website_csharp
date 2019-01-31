@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace website.Controllers
 {
+    /// <summary>
+    /// 仪表盘
+    /// </summary>
     public class DashboardController : Controller
     {
         // GET: Dashboard

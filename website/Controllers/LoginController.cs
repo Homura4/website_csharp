@@ -74,20 +74,23 @@ namespace website.Controllers
             String message = String.Empty;
             Boolean result = false;
 
-            if (Session["vcode"] == null)
+            if (false)
             {
-                message = "验证码过期";
-                model.Message = message;
-                model.UserPwd = String.Empty;
-                return View("Index", model);
-            }
+                if (Session["vcode"] == null)
+                {
+                    message = "验证码过期";
+                    model.Message = message;
+                    model.UserPwd = String.Empty;
+                    return View("Index", model);
+                }
 
-            if (Session["vcode"].ToString() != vcode)
-            {
-                message = "验证码错误";
-                model.Message = message;
-                model.UserPwd = String.Empty;
-                return View("Index", model);
+                if (Session["vcode"].ToString() != vcode)
+                {
+                    message = "验证码错误";
+                    model.Message = message;
+                    model.UserPwd = String.Empty;
+                    return View("Index", model);
+                }
             }
 
             if (String.IsNullOrEmpty(model.UserAccount) || String.IsNullOrEmpty(model.UserPwd))

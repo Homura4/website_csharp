@@ -13,7 +13,7 @@ namespace website.Controllers
         /// home页
         /// </summary>
         /// <returns>ActionResult.</returns>
-        [CustomAuthorize]
+        //[CustomAuthorize]
         public ActionResult Index()
         {
             return View();

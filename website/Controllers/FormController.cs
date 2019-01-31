@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace website.Controllers
 {
+    /// <summary>
+    /// 控件
+    /// </summary>
     public class FormController : Controller
     {
         // GET: Form
