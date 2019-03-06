@@ -119,6 +119,7 @@ namespace website
                 }
                 else
                 {
+                    // 直接路径访问会造成页面闪烁,ajax可以避免这个情况
                     a.InnerHtml = itemLi.Text;
                     a.Attributes["href"] = menuUrl(itemLi.Action, itemLi.Controller);
 
