@@ -12,41 +12,41 @@
     <!-- 控件的库 -->
     <MenuItem ID="1.2" Text="控件集合" Controller="" Action="" CSSClass="fa-edit">
       <MenuItem ID="1.2.1" Text="一般表格" Controller="Form" Action="GeneralForm"  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.2.2" Text="高级组件" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.2.3" Text="表格验证" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.2.4" Text="表单向导" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.2.5" Text="表格上传" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.2.6" Text="表格按钮" Controller="" Action=""  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.2.2" Text="高级组件" Controller="Form" Action="AdvancedComponents"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.2.3" Text="表格验证" Controller="Form" Action="FormValidation"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.2.4" Text="表单向导" Controller="Form" Action="FormWizards"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.2.5" Text="表格上传" Controller="Form" Action="FormUpload"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.2.6" Text="表格按钮" Controller="Form" Action="FormButtons"  ChildAction="Data" ></MenuItem>
     </MenuItem>
     <!-- ui元素库 -->
     <MenuItem ID="1.3" Text="ui元素" Controller="" Action="" CSSClass="fa-desktop">
-      <MenuItem ID="1.3.1" Text="一般元素" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.3.2" Text="媒体库" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.3.3" Text="排版" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.3.4" Text="图标库" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.3.5" Text="符号库" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.3.6" Text="小工具" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.3.7" Text="发票" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.3.8" Text="收件箱" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.3.9" Text="日历" Controller="" Action=""  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.1" Text="一般元素" Controller="UIElements" Action="GeneralElements"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.2" Text="媒体库" Controller="UIElements" Action="MediaGallery"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.3" Text="排版" Controller="UIElements" Action="Typography"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.4" Text="图标库" Controller="UIElements" Action="Icons"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.5" Text="符号库" Controller="UIElements" Action="Glyphicons"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.6" Text="小工具" Controller="UIElements" Action="Widgets"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.7" Text="发票" Controller="UIElements" Action="Invoice"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.8" Text="收件箱" Controller="UIElements" Action="Inbox"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.3.9" Text="日历" Controller="UIElements" Action="Calendar"  ChildAction="Data" ></MenuItem>
     </MenuItem>
     <!-- 表0.0库 -->
     <MenuItem ID="1.4" Text="表" Controller="" Action="" CSSClass="fa-table">
-      <MenuItem ID="1.4.1" Text="静态表" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.4.2" Text="动态表" Controller="" Action=""  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.4.1" Text="静态表" Controller="Tables" Action="Tables"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.4.2" Text="动态表" Controller="Tables" Action="TablesDynamic"  ChildAction="Data" ></MenuItem>
     </MenuItem>
     <!-- 图表库 一堆组件感觉都好厉害-->
     <MenuItem ID="1.5" Text="图表" Controller="" Action="" CSSClass="fa-bar-chart-o">
-      <MenuItem ID="1.5.1" Text="Chart js" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.5.2" Text="Chart js2" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.5.3" Text="Moris js" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.5.4" Text="ECharts" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.5.5" Text="Other Charts" Controller="" Action=""  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.5.1" Text="图表1" Controller="DataPresentation" Action="Chartjs"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.5.2" Text="图表2" Controller="DataPresentation" Action="Chartjs2"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.5.3" Text="Moris图表" Controller="DataPresentation" Action="Morisjs"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.5.4" Text="ECharts图表" Controller="DataPresentation" Action="Echarts"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.5.5" Text="其他图表" Controller="DataPresentation" Action="OtherCharts"  ChildAction="Data" ></MenuItem>
     </MenuItem>
     <!-- 其实就是一个边栏和页脚-->
     <MenuItem ID="1.6" Text="布局" Controller="" Action="" CSSClass="fa-clone">
-      <MenuItem ID="1.5.1" Text="固定边栏" Controller="" Action=""  ChildAction="Data" ></MenuItem>
-      <MenuItem ID="1.5.2" Text="固定页脚" Controller="" Action=""  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.5.1" Text="固定边栏" Controller="Layouts" Action="FixedSidebar"  ChildAction="Data" ></MenuItem>
+      <MenuItem ID="1.5.2" Text="固定页脚" Controller="Layouts" Action="FixedFooter"  ChildAction="Data" ></MenuItem>
     </MenuItem>
     
   </MenuItem>
@@ -80,5 +80,6 @@
     </MenuItem>
     
   </MenuItem>
+  <!-- /传说中的高级功能 -->
 </Menu>
 <!--<MenuItem ID="1.1" Text="菜单名称" Controller="控制器名称(没有就为空)" Action="操作方法(没有就为空)"  ChildAction="子方法" CSSClass="菜单样式"></MenuItem>-->
